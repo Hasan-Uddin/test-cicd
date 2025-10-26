@@ -13,7 +13,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: tanjid07/eintern:latest
+    image: eintern:latest
     container_name: dapplesoft-eintern
     ports:
       - "8080:80"   # host:container

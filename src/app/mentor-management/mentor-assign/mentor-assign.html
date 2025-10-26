@@ -1,0 +1,31 @@
+<div class="p-6 bg-gray-100 min-h-screen">
+  <h2 class="text-2xl font-bold mb-4">Assign Mentor</h2>
+
+  <form (ngSubmit)="assignMentor()" class="bg-white p-6 rounded-lg shadow space-y-4">
+    <div>
+      <label class="block mb-1 font-medium">Select Mentor</label>
+      <select [(ngModel)]="assign.mentor_id" name="mentor_id" class="w-full border p-2 rounded">
+        <option *ngFor="let mentor of mentors" [value]="mentor.mentor_id">{{ mentor.full_name }}</option>
+      </select>
+    </div>
+
+    <div>
+      <label class="block mb-1 font-medium">Select Intern</label>
+      <select [(ngModel)]="assign.intern_id" name="intern_id" class="w-full border p-2 rounded">
+        <option *ngFor="let intern of interns" [value]="intern.user_id">{{ intern.full_name }}</option>
+      </select>
+    </div>
+
+    <div>
+      <label class="block mb-1 font-medium">Duration (Months)</label>
+      <input type="number" [(ngModel)]="assign.duration_months" name="duration" class="w-full border p-2 rounded" />
+    </div>
+
+    <div>
+      <label class="block mb-1 font-medium">Mentorship Type</label>
+      <input type="text" [(ngModel)]="assign.mentorship_type" name="mentorship_type" class="w-full border p-2 rounded" />
+    </div>
+
+    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Assign</button>
+  </form>
+</div>

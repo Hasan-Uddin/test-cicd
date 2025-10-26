@@ -1,0 +1,39 @@
+<!-- Sidebar Container -->
+<div
+  class="fixed top-0 left-0 z-50 h-screen flex flex-col bg-white shadow-xl transition-all duration-700 overflow-hidden lg:relative lg:translate-x-0"
+  [ngStyle]="{ width: navWidth + 'rem', 'maxWidth': navWidth + 'rem' }"
+  [class.-translate-x-full]="isMobile && !isNavExpanded"
+>
+
+  <!-- Toggle Arrow -->
+  <div
+    class="pi pi-angle-double-left hover right-0 p-2 border-2 absolute top-4 bg-white cursor-pointer transition-transform duration-300 hidden lg:block"
+    [ngClass]="{
+      'rotate-180 duration-1000': !isNavExpanded,
+    }"
+    (click)="onToggleClick()"
+  ></div>
+
+  <!-- Sidebar contents (shown only when expanded) -->
+  <div class="text-xs font-semibold mt-2 p-4" *ngIf="isNavExpanded">
+    <!--Title/icon-->
+    <div class="text-4xl py-3 text-gray-500">e-Intern</div>
+
+    <!-- nav items -->
+    <app-nav-item class="text-gray-500" icon="pi pi-user" label="Student" link="/student"></app-nav-item>
+    <app-nav-item class="text-gray-500" icon="pi pi-users" label="Mentor" link="/mentor"></app-nav-item>
+    <app-nav-item class="text-gray-500" icon="pi pi-user" label="Profile" link="/profile"></app-nav-item>
+    <app-nav-item class="text-gray-500" icon="pi pi-cog" label="Settings" link="/settings"></app-nav-item>
+
+    <!-- nav items -->
+  </div>
+
+</div>
+
+
+
+
+
+
+
+

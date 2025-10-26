@@ -1,0 +1,23 @@
+<div class="flex h-screen">
+
+  <!--Sidebar-->
+  <app-side-nav [isNavExpanded]="isNavExpanded" [isMobile]="isMobile" (toggle)="toggleSidebar()"></app-side-nav>
+
+  <!--Main-->
+  <main class="flex-1 flex flex-col overflow-auto bg-gray-50">
+
+    <!--Header-->
+    <app-header [isNavExpanded]="isNavExpanded" (toggleNav)="toggleSidebar()"></app-header>
+
+    <!--Router content/body -->
+      <section class="flex-1 flex items-center justify-center p-6">
+      <div class="w-full max-w-5xl mx-auto">
+        <router-outlet></router-outlet>
+      </div>
+    </section>
+
+    <!--Footer -->
+    <app-footer class="mt-auto" />
+  </main>
+  
+</div>

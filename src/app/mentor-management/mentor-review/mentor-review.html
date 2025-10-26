@@ -1,0 +1,17 @@
+<div class="p-6 bg-gray-100 min-h-screen">
+  <h2 class="text-2xl font-bold mb-4">Give Review</h2>
+
+  <form (ngSubmit)="submitReview()" class="bg-white p-6 rounded-lg shadow space-y-4">
+    <div>
+      <label class="block mb-1 font-medium">Feedback Score (0-10)</label>
+      <input type="number" [(ngModel)]="review.feedback_score" name="feedback_score" class="w-full border p-2 rounded" min="0" max="10" />
+    </div>
+
+    <div>
+      <label class="block mb-1 font-medium">Remarks</label>
+      <textarea [(ngModel)]="review.remarks" name="remarks" class="w-full border p-2 rounded"></textarea>
+    </div>
+
+    <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Submit Review</button>
+  </form>
+</div>
